@@ -1,4 +1,4 @@
-# JisongLiu Personal Blog
+# Jisong Liu Personal Blog
 
 ## `Starting from 01/17/2017`
 
