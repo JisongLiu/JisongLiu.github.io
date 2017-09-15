@@ -80,4 +80,44 @@ for i, value := range x {
    x := make(map[string]int) // string is key, int is value
    
    ```
+   
+ ### Methods, Interface and pointer
+ 
+ - the function
+  - new  a function
+  ``` func f() (int, int) {
+  return 5, 6
+  }
+  ```
+  - Variadic functions
+  ```
+  func add(args ...int) int {
+  total := 0
+  for _, v := range args {
+    total += v
+  }
+  return total
+}
+```
+  - assign a function to a variable
+  ```
+  add := func(x, y int) int {
+    return x + y
+  }
+  add(3, 4)
+  ```
+  - defer: a special statement called defer which schedules a function call to be run after the function completes
+  
+  - Pointer: & * 
+  ```
+  func zero(xPtr *int) {
+  *xPtr = 0
+  }
+  func main() {
+    x := 5
+    zero(&x)
+    fmt.Println(x) // x is 0
+  }
+  ```
+
   
