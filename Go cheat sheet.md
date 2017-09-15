@@ -1,3 +1,5 @@
+Reference: https://www.golang-book.com/books/intro
+
 ### Basic type and variable
 
 - Integer, String, boolean
@@ -81,7 +83,7 @@ for i, value := range x {
    
    ```
    
- ### Methods, Interface and pointer
+ ### Methods and pointer
  
  - the function
   - new  a function
@@ -119,5 +121,28 @@ for i, value := range x {
     fmt.Println(x) // x is 0
   }
   ```
+  
+  ### Structs and interface 
+  
+  - Structs. It could have fields and methods
+  ```
+  type Circle struct {
+  x float64
+  y float64
+  r float64
+}
+  ```
+  - Interface
+  ```
+  type Shape interface {
+  area() float64
+}
+  ```
+  
+  
+  
+  
+  
+  
 
   
