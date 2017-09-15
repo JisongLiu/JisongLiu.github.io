@@ -70,6 +70,12 @@ for i, value := range x {
   ```
   
   - Slice (a flexible array)
-    -  How to get a Slide: ``` x := make([]float64, 5) ```
-    -  
+    -  How to get a Slide: ``` x := make([]float64, 5) ``` or ``` arr := [5]float64{1,2,3,4,5} x := arr[0:5] ```
+    -  Slide operations: 
+      - append: ```  slice1 := []int{1,2,3} slice2 := append(slice1, 4, 5) // 4 and 5 will be added after 3 ```
+      - copy: ```  slice1 := []int{1,2,3} slice2 := make([]int, 2) copy(slice2, slice1) // the contents in slice2 will be copied to slice1 ```
+   - Map
+   ```
+   x := make(map[string]int) // string is key, int is value
+    ```
   
