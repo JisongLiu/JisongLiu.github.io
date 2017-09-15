@@ -87,7 +87,8 @@ for i, value := range x {
  
  - the function
   - new  a function
-  ``` func f() (int, int) {
+  ``` 
+  func f() (int, int) {
   return 5, 6
   }
   ```
