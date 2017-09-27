@@ -9,6 +9,14 @@ v.s. Map<String, List<String>> m = HashMap.newInstance();)
 
 ### item 2 Use the builder pattern if you meet too much parameter
 
+### item 3 Enfore the singleton property with a private constructor or an enum type 
+
+'''
+public enum Elvis {
+       INSTANCE;
+       public
+'''
+
 ### item 4 Make a class noninstantiability using a private constructor method
 
 ### item 5 Reuse an instance if it is immutable. E.g. using static key word or String = "Not do it like new String()". If
@@ -24,4 +32,6 @@ if registered as a listener, never forget to deregister it
 
 ### item 8 - 10 how to override
 
--
+- If you override an equal method, keep transitive, reflexive, symmetric, consistent
+- Always override hashcode when you override the equal method
+- Always override the toString() to help we can print the valuable fields of an instance.
