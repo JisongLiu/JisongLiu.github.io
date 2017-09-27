@@ -11,11 +11,11 @@ v.s. Map<String, List<String>> m = HashMap.newInstance();)
 
 ### item 3 Enfore the singleton property with a private constructor or an enum type 
 
-'''
+```
 public enum Elvis {
        INSTANCE;
        public
-'''
+```
 
 ### item 4 Make a class noninstantiability using a private constructor method
 
