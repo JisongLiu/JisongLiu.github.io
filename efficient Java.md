@@ -35,3 +35,44 @@ if registered as a listener, never forget to deregister it
 - If you override an equal method, keep transitive, reflexive, symmetric, consistent
 - Always override hashcode when you override the equal method
 - Always override the toString() to help we can print the valuable fields of an instance.
+
+### item 11 passed
+
+### item 12 compareTo() -- Comparable interface
+
+- consistent
+- compareTo(x, y) == - compareTo(y, x) symmetric
+- compareTo(x, x) == 0 reflexive
+- compareTo(x, y) == 0 => sign is the same for compareTo(y, z) a 
+nd compareTo(x, z) transitive
+- compareTo(x, y) > 0 and compareTo(y, z) > 0 => compareTo(x, z) > 0 transitive
+
+### item 13 - 15 Minimize the accessibility of classes and members
+
+- Instance fields should never be public. Because in this case, you give up the ability to limit the values stored in that field and give up taking any action when the field is modified. All in all, you will lose the fexilibity. (public classes should never expose mutable fields)
+- It is wrong for a class to have a public static final array field, or an accessor that return that field.
+ - make it private and expose it as a unmodified public field
+ - getter return a copy of that field
+- If one variable could be immutable, declare it as immutable. It could be shared freely and thread-safe.
+
+### item 16 - 17 Favor composition over inheritance
+
+- Unlike method invocation, inheriotance violates encapsulation.
+- Therefore, the class must document its self-use of overridable methods.
+
+### item 18 passed
+
+### item 19 how to use the utility class 
+
+- import static java.lang.Math.*; // it will import all the static function under Math
+
+### item20: Prefer class hierarchies to tagged classes
+
+- E.g.: a class has a enum Shape (square, rectangular) -> subclass square / rectangular
+
+### item 21: Usefunctionobjectstorepresentstrategies
+
+
+
+
+
