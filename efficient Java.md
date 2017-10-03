@@ -98,9 +98,13 @@ nd compareTo(x, z) transitive
 - you lose type safety if you use a raw type like List, but not if you use a parameterized type like List<Object>
 - The object is better than raw itself because you will get the error during the complier period not run time
 
+
+
 ### item 25:Prefer list to array
 
 - List<Object> ol = new ArrayList<Long>(); // Incompatible types BUT Object[] objectArray = new Long[1]; will be correct. In other words, List<T> will be only assigned the type T.
+       
+       
        
 ### item 26: Favor generic types
 
