@@ -90,6 +90,7 @@ nd compareTo(x, z) transitive
        ...  // Bulk of class omitted
    }
        ```
+       
 ### item 22: If you declare a member class that does not require access to an enclosing instance, always put the static modifier in its declaration
 
 ### item 23: Declare the parameter rather than using the raw type
@@ -119,7 +120,9 @@ class DelayQueue<E extends Delayed> implements BlockingQueue<E>;
        - producer-extends, consumer-super.
        - public void popAll(Collection<? super E> dst)
        - public void pushAll(Iterable<? extends E> src)
-       
+     
+     
+     
 ### item 29: Considertypesafeheterogeneouscontainers
 
 ```
