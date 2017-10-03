@@ -152,9 +152,38 @@ text.applyStyles(EnumSet.of(Style.BOLD, Style.ITALIC));
 
 ### item 34: Emulate extensible enums with interfaces 
 
+```
+public interface Operation {
+       double apply(double x, double y);
+}
+public enum BasicOperation  implements Operation {
+       PLUS("+") {
+public double apply(double x, double y) { return x + y; } }, // you can put some logic function here
+MINUS("-") {
+public double apply(double x, double y) { return x - y; }
+       },
+       TIMES("*") {
+public double apply(double x, double y) { return x * y; } },
+DIVIDE("/") {
+public double apply(double x, double y) { return x / y; }
+};
+```
+### item35 Prefer annotations to naming patterns
 
+- E.g.: the naming patterns: you have to start with test if you write a code with Junit, which is naming patterns
 
+### Item36: Consistently use the Override annotation
 
+### Item37: Use marker interfaces to define types
+
+- marker here is like Serializable
+
+### item 38 - 40: tips for method:
+
+- always check the parameters for validity
+- it is essential to make a defensive copy of each mutable parameter to the constructor (because it is referrence)
+- For parameter types, favor interfaces over classes (Map<> -> you can pass HashMap or HashTable)
+- Prefer two-element enum types to boolean parameters (it makes your code more readable and extendable)
 
 
 
