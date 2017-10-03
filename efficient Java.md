@@ -104,6 +104,7 @@ nd compareTo(x, z) transitive
 - List<Object> ol = new ArrayList<Long>(); // Incompatible types BUT Object[] objectArray = new Long[1]; will be correct. In other words, List<T> will be only assigned the type T.
   
 ### item 26: Favor generic types
+
 - it will helps you to parameterize your function
 
 ```
