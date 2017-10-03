@@ -70,7 +70,89 @@ nd compareTo(x, z) transitive
 
 - E.g.: a class has a enum Shape (square, rectangular) -> subclass square / rectangular
 
-### item 21: Usefunctionobjectstorepresentstrategies
+### item 21: Use function object store present strategies
+
+- declare an interface to represent the strategy, 
+- a class that implements this interface for each concrete strategy. 
+       - if it is used only once, it is typically declared and instantiated as an anonymous class. 
+       - if it is designed for repeated use, it is generally implemented as a private static member class and exported in a public static final field whose type is the strategy interface.
+       ```
+        class Host {
+       private static class StrLenCmp
+               implements Comparator<String>, Serializable {
+           public int compare(String s1, String s2) {
+               return s1.length() - s2.length();
+           }
+}
+       // Returned comparator is serializable
+       public static final Comparator<String>
+           STRING_LENGTH_COMPARATOR = new StrLenCmp();
+       ...  // Bulk of class omitted
+   }
+       ```
+### item 22: If you declare a member class that does not require access to an enclosing instance, always put the static modifier in its declaration
+
+### item 23: Declare the parameter rather than using the raw type
+
+- you lose type safety if you use a raw type like List, but not if you use a parameterized type like List<Object>
+- The object is better than raw itself because you will get the error during the complier period not run time
+
+### item 25:Prefer list to array
+
+- List<Object> ol = new ArrayList<Long>(); // Incompatible types BUT Object[] objectArray = new Long[1]; will be correct. In other words, List<T> will be only assigned the type T.
+       
+### item 26: Favor generic types
+
+- it will helps you to parameterize your function
+
+```
+public <T> T[] arrays(T[] a) {      }
+
+class BlockingQueue<E> {
+}
+
+class DelayQueue<E extends Delayed> implements BlockingQueue<E>;
+
+```
+
+- For maximum flexibility, use wildcard types on input parameters that represent producers or consumers. 
+       - producer-extends, consumer-super.
+       - public void popAll(Collection<? super E> dst)
+       - public void pushAll(Iterable<? extends E> src)
+       
+### item 29: Considertypesafeheterogeneouscontainers
+
+```
+// Typesafe heterogeneous container pattern - implementation
+public class Favorites {
+private Map<Class<?>, Object> favorites =
+           new HashMap<Class<?>, Object>();
+       public <T> void putFavorite(Class<T> type, T instance) {
+           if (type == null)
+               throw new NullPointerException("Type is null");
+           favorites.put(type, instance);
+}
+public <T> T getFavorite(Class<T> type) { return type.cast(favorites.get(type));
+} }
+
+```
+
+### item 30: use enum instead of int constant
+
+### item 32: Use Enum Set instead of bit fields (in a class)
+
+```
+public enum Style { BOLD, ITALIC, UNDERLINE, STRIKETHROUGH }
+text.applyStyles(EnumSet.of(Style.BOLD, Style.ITALIC));
+```
+
+### item 33: Use EnumMap instead of ordinal indexing
+
+- Passed (useful but not useful for now...)
+
+### item 34: Emulate extensible enums with interfaces 
+
+
 
 
 
