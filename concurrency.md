@@ -3,11 +3,17 @@
 - synchronized is based on instance level. If you use the synchronized to declare two methods in a class, you cannot access to
 the two method in the thread simultaneously
 
+### Basic thread method
+
+- thread.start() // start the run method of that thread
+- thread.join() // code will wait until this thread finished
+- thread.setUncaughtExceptionHandler() // set a handler for possible uncaught exception
 
 ### ThreadLocal
 
 ```
-// To implement the following thing, every thread stores: ThreadLocal.ThreadLocalMap
+// To implement the following thing, every thread stores: 
+ Local.ThreadLocalMap
 private static final ThreadLocal<DateFormat> threadLocalDateFormat
             = new ThreadLocal<>();
 // Soft reference will delete only when memory is not enough
@@ -101,6 +107,7 @@ private static final ThreadLocal<WeakReference<DateFormat>> threadLocalDateForma
 - await()
 - signal()
 - signalAll()
+
 ```
 class BoundedBuffer {
    final Lock lock = new ReentrantLock();
@@ -146,6 +153,6 @@ class BoundedBuffer {
 - schedule / cancel
 - implemented way: based on heap; based on Hash Wheel Timer; multi-layer Hash Wheel Timer (hour, minute, second)
 
-
+### 
 
 
