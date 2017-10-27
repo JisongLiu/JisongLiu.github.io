@@ -20,8 +20,17 @@ private static final ThreadLocal<WeakReference<DateFormat>> threadLocalDateForma
 
 ### The principle of lock
 
-- If possible, use a specific lock (like read and write lock) rather than a specific lock
-- Lock a block as small as possible. If two part can be executed in the same time, use different lock for these parts
+- using CopyOnWrite to avoid adding lock on read
+- using lock-free to avoid adding the lock
+- split the lock like hashmap -> split to different segment like readAndWriteLock
+- narrow the range that is locked.
+
+### Dead lock
+
+- resource can only be used for one thread
+- resource can not be freed if that thread don't agree
+- A thread request a new resource while keep own of current one
+- request and wait build a loop
 
 
 ### Concurreny class in Java
@@ -131,6 +140,12 @@ class BoundedBuffer {
    }
  }
 ```
+
+### Timer
+
+- schedule / cancel
+- implemented way: based on heap; based on Hash Wheel Timer; multi-layer Hash Wheel Timer (hour, minute, second)
+
 
 
 
