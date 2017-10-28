@@ -155,6 +155,16 @@ class BoundedBuffer {
 - schedule / cancel
 - implemented way: based on heap; based on Hash Wheel Timer; multi-layer Hash Wheel Timer (hour, minute, second)
 
-### 
+### State of thread
+
+- RUNNABLE state: get the lock
+
+- When thread calls wait it releases the current object lock (it keeps all locks from other objects) and than goes to WAITING state.
+
+- When some other thread calls notify or notifyAll on that same object the first thread changes state from WAITING to BLOCKED, Notified thread does NOT automatically reacquire the lock or become RUNNABLE, in fact it must fight for the lock with all other blocked threads.
+
+- WAITING and BLOCKED states both prevent thread from running, but they are very different.
+
+- WAITING threads must be explicitly transformed to BLOCKED threads by a notify from some other thread. WAITING never goes directly to RUNNABLE.
 
 
