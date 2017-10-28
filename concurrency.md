@@ -3,6 +3,11 @@
 - synchronized is based on instance level. If you use the synchronized to declare two methods in a class, you cannot access to
 the two method in the thread simultaneously
 
+### Why multi-thread
+
+- can use CPU when wait for I/O time 
+- multi-core
+
 ### Basic thread method
 
 - thread.start() // start the run method of that thread
