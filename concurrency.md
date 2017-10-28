@@ -167,4 +167,32 @@ class BoundedBuffer {
 
 - WAITING threads must be explicitly transformed to BLOCKED threads by a notify from some other thread. WAITING never goes directly to RUNNABLE.
 
+### Lock free
 
+```
+class Counter {
+	private AtomicInteger max = new AtomicInteger();
+	// for loop; compareAndSet, if success, break; or loop || get a condition to break
+	public void set(int value) { 
+		//第一步循环
+		for (;;) {
+			int current = max.get(); 
+			if (value > current) {
+				//第二步CAS
+				if (max.compareAndSet(current, value)) { 
+					//第三步回退
+					break;
+				} else {
+					continue;
+				}
+			} else { 
+				break; 
+			}
+	￼￼	} 
+	}
+	//
+	public int getMax() {
+		return max.get();
+	}
+}
+```
