@@ -3,6 +3,12 @@
 - synchronized is based on instance level. If you use the synchronized to declare two methods in a class, you cannot access to
 the two method in the thread simultaneously
 
+### some limitation of a multi-thread web crawler
+
+- context switch cost
+- thread(port) number limitation
+- network bottleneck for single machine
+
 ### Why multi-thread
 
 - can use CPU when wait for I/O time 
