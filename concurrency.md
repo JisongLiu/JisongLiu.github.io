@@ -7,7 +7,9 @@ the two method in the thread simultaneously
 
 - thread.start() // start the run method of that thread
 - thread.join() // code will wait until this thread finished
+- thread.setDaemon(true | false) // the thread will exit even when there is a Daemon thread
 - thread.setUncaughtExceptionHandler() // set a handler for possible uncaught exception
+- when you interrupt a thread, if its state is waiting / blocked -> stop it instantly OR set the interrupt flag as true and then stop it when we can do it
 
 ### ThreadLocal
 
