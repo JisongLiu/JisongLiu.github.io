@@ -229,3 +229,8 @@ public class LinkedQueue <E> {
     }
 }
 ```
+
+### Volatile
+
+- the variable will not cached in the local thread, all the operation will have the direct influence on the main heap part
+- we should use volatile when an variable is used in many places and it is written in some places.
