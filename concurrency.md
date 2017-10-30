@@ -178,6 +178,8 @@ class BoundedBuffer {
 
 - WAITING threads must be explicitly transformed to BLOCKED threads by a notify from some other thread. WAITING never goes directly to RUNNABLE.
 
+- a thread is not in a blocked state while doing IO
+
 ### Lock free
 
 ```
